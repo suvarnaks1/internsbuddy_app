@@ -1,14 +1,13 @@
+import 'package:buddy_pair/Common/Text.dart';
 import 'package:buddy_pair/SplashScreen/Screens/rotationWidget.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final double screenWidth = MediaQuery.of(context).size.width;
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -17,15 +16,10 @@ class LoginScreen extends StatelessWidget {
         const SizedBox(height: 10),
 
         // Text
-        const Text(
+        Text(
           "Let's meet new\npeople around you",
           textAlign: TextAlign.center,
-          style: TextStyle(
-            fontFeatures: [FontFeature.stylisticAlternates()],
-            fontSize: 20,
-            fontWeight: FontWeight.w500,
-            color: Colors.black,
-          ),
+          style: TextStyles().heading1(color: Colors.black),
         ),
         const SizedBox(height: 20),
 
@@ -35,61 +29,108 @@ class LoginScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             children: [
-              _buildLoginButton(
-                text: 'Login with Email/Phone',
-                backgroundColor: const Color(0XFF4b164c),
-                textColor: Colors.white,
-                iconPath: 'assets/phone icon.jpeg',
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  width: 300,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: const Color(0XFF4b164c),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: CircleAvatar(
+                          backgroundImage:
+                              const AssetImage('images/phone_logo.png'),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Text(
+                        'Login with Email/Phone',
+                        style: GoogleFonts.aldrich(
+                          fontWeight: FontWeight.normal,
+                          color: Colors.white,
+                          fontSize: 16,
+                          decoration: TextDecoration.none,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-              const SizedBox(height: 15),
-              _buildLoginButton(
-                text: 'Login with Google',
-                backgroundColor: const Color.fromARGB(255, 245, 188, 226),
-                textColor: Color(0XFF4b164c),
-                iconPath: 'assets/google_logo.png',
+              const SizedBox(height: 20),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  width: 300,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(257, 235, 126, 162)
+                        .withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: CircleAvatar(
+                          radius: 12, // Reduced the radius of the CircleAvatar
+                          backgroundImage:
+                              const AssetImage('assets/images/google_logo.png'),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Text(
+                        'Login with Google',
+                        style: GoogleFonts.aldrich(
+                          color: const Color(0XFF4b164c),
+                          fontSize: 16,
+                          decoration: TextDecoration.none,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-              const SizedBox(height: 10),
-              const Text(
-                "Don't have an account? Sign Up",
-                style: TextStyle(color: Color.fromARGB(179, 19, 18, 18)),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Don't have an account?",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.aldrich(
+                        color: const Color.fromARGB(179, 19, 18, 18),
+                        fontSize: 14,
+                        decoration: TextDecoration.none,
+                      ),
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      " Sign Up",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.aldrich(
+                        color: const Color(0XFFDD88CF),
+                        fontSize: 14,
+                        decoration: TextDecoration.none,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
         ),
       ],
-    );
-  }
-
-  // Login Button Widget
-  Widget _buildLoginButton({
-    required String text,
-    required Color backgroundColor,
-    required Color textColor,
-    required String iconPath,
-  }) {
-    return Container(
-      width: 300,
-      height: 50,
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: BorderRadius.circular(30),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: CircleAvatar(
-              backgroundImage: AssetImage(iconPath),
-            ),
-          ),
-          const SizedBox(width: 10),
-          Text(
-            text,
-            style: TextStyle(color: textColor, fontSize: 16),
-          ),
-        ],
-      ),
     );
   }
 }

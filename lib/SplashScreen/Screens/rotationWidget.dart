@@ -13,11 +13,11 @@ class _RotationWidgetState extends State<RotationWidget>
   late final AnimationController _controller;
 
   final List<String> profileImages = [
-    'assets/profile pic 2.png',
-    'assets/Group 937.png',
-    'assets/Mask Group1.png',
-    'assets/Mask Group2.png',
-    'assets/Mask Group.png',
+    'assets/images/profile pic 2.png',
+    'assets/images/Group 937.png',
+    'assets/images/Mask Group1.png',
+    'assets/images/Mask Group2.png',
+    'assets/images/Mask Group.png',
   ];
 
   @override
@@ -39,13 +39,12 @@ class _RotationWidgetState extends State<RotationWidget>
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
 
-    // Circle radii and image size scaling
     final double outerRadius = screenWidth * 0.35;
     final double innerRadius = screenWidth * 0.2;
 
     return Container(
-      width: screenWidth * 0.8, // Adjust width of the container
-      height: screenWidth * 0.8, // Adjust height of the container
+      width: screenWidth * 0.8,
+      height: screenWidth * 0.8,
       alignment: Alignment.center,
       child: Stack(
         alignment: Alignment.center,
@@ -73,26 +72,23 @@ class _RotationWidgetState extends State<RotationWidget>
               color: Colors.white,
             ),
           ),
-          // Rotating profile images
           ...List.generate(profileImages.length, (index) {
             final angle = (2 * pi / profileImages.length) * index;
             final double radius = outerRadius;
 
             double imageSize = screenWidth * 0.12;
             if (index == 0) {
-              imageSize =
-                  screenWidth * 0.1; // Slightly larger for the first image
+              imageSize = screenWidth * 0.1;
             }
             if (index == 2 || index == 4) {
-              imageSize = screenWidth * 0.1; // Smaller for specific indices
+              imageSize = screenWidth * 0.1;
             }
 
-            // Adjust the position for the third image (index 3)
             final double x = radius * cos(angle) + outerRadius - imageSize / 2;
             double y = radius * sin(angle) + outerRadius - imageSize / 2;
 
             if (index == 3) {
-              y -= screenWidth * 0.02; // Move the third image slightly upward
+              y -= screenWidth * 0.02;
             }
 
             return Positioned(
@@ -102,8 +98,7 @@ class _RotationWidgetState extends State<RotationWidget>
                 animation: _controller,
                 builder: (context, child) {
                   return Transform.rotate(
-                    angle:
-                        -_controller.value * 2 * pi, // Rotate only on position
+                    angle: -_controller.value * 2 * pi,
                     child: child,
                   );
                 },
@@ -127,7 +122,7 @@ class _RotationWidgetState extends State<RotationWidget>
             },
             child: CircleAvatar(
               radius: screenWidth * 0.1,
-              backgroundImage: const AssetImage('assets/Avatar.png'),
+              backgroundImage: const AssetImage('assets/images/Avatar.png'),
             ),
           ),
           Positioned(
@@ -143,7 +138,7 @@ class _RotationWidgetState extends State<RotationWidget>
               },
               child: ClipOval(
                 child: Image.asset(
-                  'assets/profile pic 3.png',
+                  'assets/images/profile pic 3.png',
                   width: screenWidth * 0.10,
                   height: screenWidth * 0.10,
                   fit: BoxFit.cover,
@@ -165,7 +160,7 @@ class _RotationWidgetState extends State<RotationWidget>
               },
               child: ClipOval(
                 child: Image.asset(
-                  'assets/Group 936.png',
+                  'assets/images/Group 936.png',
                   width: screenWidth * 0.10,
                   height: screenWidth * 0.10,
                   fit: BoxFit.cover,
@@ -212,11 +207,11 @@ class DashedCirclePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint()
       ..color = const Color.fromARGB(255, 226, 126, 159).withOpacity(0.5)
-      ..strokeWidth = 1.0 // Reduced the thickness of the dashed line
+      ..strokeWidth = 1.0
       ..style = PaintingStyle.stroke;
 
-    const double dashWidth = 20; // Shorter dashes
-    const double dashSpace = 5; // Smaller space between dashes
+    const double dashWidth = 20;
+    const double dashSpace = 5;
     double startAngle = 0;
     final double radius = size.width / 2;
 
