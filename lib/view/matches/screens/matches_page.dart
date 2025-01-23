@@ -54,6 +54,7 @@ class MatchesPage extends StatelessWidget {
               ]))
             ),
           ],
+          
         ),
         Expanded(
           child: Padding(
