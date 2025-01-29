@@ -15,6 +15,44 @@ class _HomeScreenState extends State<HomeScreen> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+            appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        
+        title: Row(
+          children: [
+           
+          Image.asset('assets/images/buddypairmenu.png'),
+            SizedBox(
+              width: 5,
+            ),
+            Text(
+                'Buddy pair',style: TextStyle( color: Colors.pink,
+                fontSize: 24),
+               ),
+            const Spacer(),
+            Container(
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
+                  border: Border.all(
+                    color: Colors.grey,
+                    width: 1.0,
+                  ),
+                ),
+                child: Image.asset('assets/images/bellbutton.png')),
+            const SizedBox(
+              width: 10,
+            ),
+            const CircleAvatar(
+              radius: 20,
+              backgroundImage: AssetImage('assets/images/profile pic 3.png'),
+            )
+          ],
+        ),
+      ),
         backgroundColor: Color(0xFFFCF7FD),
         body: Padding(
           padding: const EdgeInsets.all(10),

@@ -1,5 +1,8 @@
 import 'package:buddy_pair/SplashScreen/Screens/LaunchingScreen.dart';
+import 'package:buddy_pair/home/screens/homescreens.dart';
 import 'package:flutter/material.dart';
+
+import 'bottomnavigation_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginScreen(),
+      home:BottomNavBarExample (),
     );
   }
 }
