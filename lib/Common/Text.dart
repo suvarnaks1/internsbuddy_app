@@ -16,9 +16,15 @@ class TextStyles {
         color: color,
         decoration: TextDecoration.none,
       );
-
   // Subheadings
+
   TextStyle subheading({Color color = Colors.grey}) => GoogleFonts.aldrich(
+        fontSize: 20.0,
+        fontWeight: FontWeight.w600,
+        color: color,
+        decoration: TextDecoration.none,
+      );
+  TextStyle subheading2({Color color = Colors.grey}) => GoogleFonts.aldrich(
         fontSize: 18.0,
         fontWeight: FontWeight.w600,
         color: color,

@@ -13,7 +13,7 @@ class LoginScreen extends StatelessWidget {
       children: [
         // Smaller Rotating Radial Profile Model
         const RotationWidget(),
-        const SizedBox(height: 10),
+        const SizedBox(height: 20),
 
         // Text
         Text(
