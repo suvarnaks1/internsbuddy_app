@@ -26,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               width: 5,
             ),
+            
             Text(
                 'Buddy pair',style: TextStyle( color: Colors.pink,
                 fontSize: 24),
