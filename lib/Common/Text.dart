@@ -46,6 +46,12 @@ class TextStyles {
         color: color,
         decoration: TextDecoration.none,
       );
+  TextStyle style2({Color color = Colors.white}) => GoogleFonts.poppins(
+        fontSize: 16.0,
+        fontWeight: FontWeight.normal,
+        color: color,
+        decoration: TextDecoration.none,
+      );
 
   // Customizable
   static TextStyle custom({
