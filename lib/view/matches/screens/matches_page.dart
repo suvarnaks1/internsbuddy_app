@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:buddy_pair/Common/Text.dart';
+import 'package:buddy_pair/common/Text.dart';
 
 class MatchesPage extends StatelessWidget {
   @override

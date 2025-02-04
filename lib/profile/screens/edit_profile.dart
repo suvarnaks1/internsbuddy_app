@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:buddy_pair/Common/color_constants.dart';
-import 'package:buddy_pair/Common/Text.dart';
+
+import 'package:buddy_pair/common/Text.dart';
 
 class EditProfile extends StatelessWidget {
   @override
