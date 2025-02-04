@@ -1,4 +1,4 @@
-import 'package:buddy_pair/Common/Text.dart';
+import 'package:buddy_pair/common/Text.dart';
 import 'package:buddy_pair/SplashScreen/Screens/rotationWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -1,10 +1,11 @@
 
 
+import 'package:buddy_pair/view/requests/screens/sent_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'home/screens/homescreens.dart';
 import 'view/matches/screens/matches_page.dart';
-import 'view/requests/screens/sent.dart';
+
 
 
 
@@ -21,7 +22,7 @@ class _BottomNavBarExampleState extends State<BottomNavBarExample> {
   final List<Widget> _pages = [
     HomeScreen(),
     DiscoverScreen(),
-    Sent(),
+    SentScreen(),
     LocationScreen(),
     MatchesPage(),
  

@@ -1,4 +1,4 @@
-import 'package:buddy_pair/Common/Text.dart';
+import 'package:buddy_pair/common/Text.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
