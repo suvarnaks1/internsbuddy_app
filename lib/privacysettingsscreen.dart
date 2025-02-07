@@ -30,6 +30,7 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
                   decoration: BoxDecoration(
                     color: ColorConstants.pinkColor,
                     shape: BoxShape.circle,
+
                   ),
                   child: Image.asset(
                     'assets/images/Search.png',
