@@ -1,4 +1,5 @@
 import 'package:buddy_pair/Common/circular_container.dart';
+import 'package:buddy_pair/Common/color_constants.dart';
 import 'package:buddy_pair/common/appbarfonts_constants.dart';
 import 'package:flutter/material.dart';
 
@@ -6,29 +7,27 @@ class Messenger extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff4B164C),
+      backgroundColor: const Color(0xff4B164C),
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(70),
+        preferredSize: const Size.fromHeight(70),
         child: AppBar(
-          backgroundColor: Color(0xff4B164C),
-          leading: Padding(
+          backgroundColor: const Color(0xff4B164C),
+          title: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: circularContainer(
-                imagePath: 'assets/images/left.png', onPressed: () {}),
-          ),
-          flexibleSpace: Stack(
-            children: [
-              Align(
-                alignment: Alignment.topCenter,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 60.0),
-                  child: AppbarfontsConstants(
-                      title: 'Messages',
-                      color: Color(0xFFFDF7FD),
-                      fontSize: 24),
+            child: Row(
+              children: [
+                whitecCircularContainer(
+                  imagePath: "assets/images/left.png",
+                  onPressed: () {},
                 ),
-              ),
-            ],
+                const SizedBox(width: 60),
+                AppbarfontsConstants(
+                  title: 'Messages',
+                  color: ColorConstants.whiteColor,
+                  fontSize: 24,
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -36,15 +35,15 @@ class Messenger extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: AppbarfontsConstants(
-                    title: 'Recent Matches',
-                    color: Color(0xFFFDF7FD),
-                    fontSize: 16),
-              )
+                  title: 'Recent Matches',
+                  color: const Color(0xFFFDF7FD),
+                  fontSize: 16,
+                ),
+              ),
             ],
           ),
           SizedBox(
@@ -57,29 +56,32 @@ class Messenger extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Container(
                     width: 90,
-                    margin: EdgeInsets.all(8.0),
+                    margin: const EdgeInsets.all(8.0),
                     decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('assets/images/picmess.png'),
-                            fit: BoxFit.fill),
-                        borderRadius: BorderRadius.circular(20)),
+                      image: const DecorationImage(
+                        image: AssetImage('assets/images/picmess.png'),
+                        fit: BoxFit.fill,
+                      ),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                   );
                 },
               ),
             ),
           ),
-          Container(
-            height: 600,
-            width: double.infinity,
-            decoration: BoxDecoration(
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              decoration: const BoxDecoration(
                 color: Color(0xFFFDF7FD),
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(40),
-                    topRight: Radius.circular(40))),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ListView.builder(
-                  scrollDirection: Axis.vertical,
+                  topLeft: Radius.circular(40),
+                  topRight: Radius.circular(40),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListView.builder(
                   itemCount: 10,
                   itemBuilder: (context, index) {
                     return Padding(
@@ -87,51 +89,67 @@ class Messenger extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Row(
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.all(8.0),
-                                  width: 60,
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFDD88CF),
-                                    borderRadius: BorderRadius.circular(100),
-                                    image: DecorationImage(image: AssetImage('assets/images/picmess.png'))
+                          Row(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.all(8.0),
+                                width: 60,
+                                height: 60,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFDD88CF),
+                                  borderRadius: BorderRadius.circular(100),
+                                  image: const DecorationImage(
+                                    image: AssetImage('assets/images/picmess.png'),
                                   ),
                                 ),
-                                Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: AppbarfontsConstants(title: 'Alfredo Calzoni', color: Color(0Xff22172A), fontSize: 18),
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: AppbarfontsConstants(
+                                      title: 'Alfredo Calzoni',
+                                      color: const Color(0Xff22172A),
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: AppbarfontsConstants(
+                                      title: 'What about that new jacket\n if I ...',
+                                      color: const Color(0Xff22172A),
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const Spacer(),
+                              Column(
+                                children: [
+                                  IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(
+                                      Icons.circle_rounded,
+                                      color: Color(0xFFDD88CF),
+                                    ),
+                                  ),
+                                  AppbarfontsConstants(
+                                    title: '09:18',
+                                    color: const Color(0xFFDD88CF),
+                                    fontSize: 12,
+                                  ),
+                                ],
+                              )
+                            ],
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: AppbarfontsConstants(title: 'What about that new jacket\n if I ...', color: Color(0Xff22172A), fontSize: 16),
-                          ),
-                        ],
-                      ),
-                      Spacer(),
-                      Column(
-                        children: [
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(Icons.circle_rounded,color: Color(0xFFDD88CF),),
-                          ),
-                          AppbarfontsConstants(title: '09:18', color: Color(0xFFDD88CF), fontSize: 12),
-                        ],
-                      )
-                              ],
-                            ),
-                          ),
-                          Divider(),
+                          const Divider(),
                         ],
                       ),
                     );
-                  }),
+                  },
+                ),
+              ),
             ),
           ),
         ],
