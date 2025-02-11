@@ -2,6 +2,7 @@
 
 import 'package:buddy_pair/Common/color_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:icons_plus/icons_plus.dart';
 
 
 
@@ -16,6 +17,13 @@ class BottomNav extends StatefulWidget {
 class _BottomNavState extends State<BottomNav> {
   int _selectedIndex = 2; // Home is selected by default
 
+
+  final List<Widget> _pages = [
+
+
+
+  ];
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -25,7 +33,15 @@ class _BottomNavState extends State<BottomNav> {
   @override
   Widget build(BuildContext context) {
 
-    return Container(
+    return Scaffold(backgroundColor: ColorConstants.lightPinkColor,
+        body: IndexedStack(
+          index: _selectedIndex,
+          children: _pages,
+        ),
+    bottomNavigationBar:
+
+
+     Container(
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       decoration: BoxDecoration(
@@ -36,13 +52,14 @@ class _BottomNavState extends State<BottomNav> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          _buildNavItem(Icons.search, 0),
-          _buildNavItem(Icons.favorite, 1),
+          _buildNavItem(Bootstrap.search, 0),
+          _buildNavItem(TeenyIcons.heart, 1),
           _buildNavItem(Icons.home, 2, isCenter: true),
-          _buildNavItem(Icons.star, 3),
-          _buildNavItem(Icons.chat, 4),
+          _buildNavItem(Bootstrap.star, 3),
+          _buildNavItem(TeenyIcons.chat, 4),
         ],
       ),
+     ),
     );
   }
 
