@@ -37,6 +37,8 @@ dependencies:
   google_fonts: ^6.2.1
   percent_indicator: ^4.2.4
   icons_plus: ^5.0.0
+  vertical_slider: ^0.0.1
+  glass: ^2.0.0+2
 
 
 

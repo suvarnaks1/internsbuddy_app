@@ -1,3 +1,5 @@
+import 'package:buddy_pair/Common/appbarfonts_constants.dart';
+import 'package:buddy_pair/Common/color_constants.dart';
 import 'package:flutter/material.dart';
 
 class LocationTab extends StatelessWidget {
@@ -10,7 +12,7 @@ class LocationTab extends StatelessWidget {
         mainAxisSpacing: 25,
         childAspectRatio: 3 / 2.5,
       ),
-      itemCount: 6,
+      itemCount: 6, // Number of cards
       itemBuilder: (context, index) {
         return Card(
           shape: RoundedRectangleBorder(
@@ -21,119 +23,124 @@ class LocationTab extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
+                // Background Image
                 Image.asset(
-                  'assets/images/profile pic 2.png',
+                  'assets/images/james.jpg',
                   fit: BoxFit.cover,
                 ),
-                // Container(
-                //   decoration: BoxDecoration(
-                //     gradient: LinearGradient(
-                //       colors: [
-                //         // Colors.black.withOpacity(0.7),
-                //         // Colors.transparent,
-                //       ],
-                //       begin: Alignment.bottomCenter,
-                //       end: Alignment.topCenter,
-                //     ),
-                //   ),
-                // ),
+
+                // Content overlay
                 Padding(
                   padding: EdgeInsets.all(8),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
+                      // "Online" Label
                       Align(
                         alignment: Alignment.topLeft,
                         child: Container(
-                          padding: EdgeInsets.only(left: 6, right: 6),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                           decoration: BoxDecoration(
-                              color: Colors.white30,
-                              borderRadius: BorderRadius.circular(20),
-                              border:
-                                  Border.all(width: 1, color: Colors.white38)),
-                          child: Text(
-                            'Online',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            color: Colors.white30,
+                            borderRadius: BorderRadius.circular(20),
                           ),
+                          child: AppbarfontsConstants(
+                              title: 'Online',
+                              color: ColorConstants.whiteColor,
+                              fontSize: 12),
+                      
                         ),
                       ),
+
                       Spacer(),
-                      Row(
-                        children: [
-                          Text(
-                            'Sithara Nair',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12,
+                      Container(
+                        decoration: BoxDecoration(
+                          // color: Colors.black.withOpacity(0.2),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.3),
+                              blurRadius: 5,
+                              spreadRadius: 10,
                             ),
-                          ),
-                          Spacer(),
-                          Text(
-                            'F, 28 YRS',
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 241, 236, 236),
-                              fontSize: 11,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        'Developer, Hyderabad',
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 241, 236, 236),
-                          fontSize: 11,
+                          ],
                         ),
-                      ),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                AppbarfontsConstants(
+                                    title: 'Sithara Nair',
+                                    color: ColorConstants.whiteColor,
+                                    fontSize: 12),
+                                Spacer(),
+                                AppbarfontsConstants(
+                                    title: 'F, 28 YRS',
+                                    color: ColorConstants.whiteColor,
+                                    fontSize: 10),
+                              ],
+                            ),
+                            AppbarfontsConstants(
+                                title: 'Developer, Hyderabad',
+                                color: ColorConstants.whiteColor,
+                                fontSize: 10),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
+
                 Positioned(
-                  right: 0,
-                  top: 20,
-                  child: Container(
-                    padding:
-                        EdgeInsets.only(left: 10, top: 3, bottom: 3, right: 3),
-                    child: Column(
-                      children: [
-                        CircleAvatar(
-                          radius: 10,
-                          backgroundColor: Colors.white30,
-                          child: Icon(
-                            Icons.thumb_up,
-                            color: Colors.white,
-                            size: 12,
-                          ),
+                    right: 0,
+                    top: 20,
+                    child: Container(
+                      // height: 50,
+                      // width: 20,
+                      child: Container(
+                        padding: EdgeInsets.only(
+                            left: 6, top: 6, bottom: 6, right: 3),
+                        decoration: BoxDecoration(
+                            color: Colors.white38,
+                            borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(12),
+                                topLeft: Radius.circular(12))),
+                        child: Column(
+                          children: [
+                            CircleAvatar(
+                              radius: 10,
+                              backgroundColor: Colors.white30,
+                              child: Icon(
+                                Icons.thumb_up,
+                                color: Colors.white,
+                                size: 12,
+                              ),
+                            ),
+                            SizedBox(height: 5),
+                            CircleAvatar(
+                              radius: 10,
+                              backgroundColor: Colors.white30,
+                              child: Icon(
+                                Icons.message,
+                                color: Colors.white,
+                                size: 12,
+                              ),
+                            ),
+                            SizedBox(height: 5),
+                            CircleAvatar(
+                              radius: 10,
+                              backgroundColor: Colors.white30,
+                              child: Icon(
+                                Icons.more_horiz,
+                                color: Colors.white,
+                                size: 12,
+                              ),
+                            ),
+                          ],
                         ),
-                        SizedBox(height: 5),
-                        CircleAvatar(
-                          radius: 10,
-                          backgroundColor: Colors.white30,
-                          child: Icon(
-                            Icons.message,
-                            color: Colors.white,
-                            size: 12,
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        CircleAvatar(
-                          radius: 10,
-                          backgroundColor: Colors.white30,
-                          child: Icon(
-                            Icons.more_horiz,
-                            color: Colors.white,
-                            size: 12,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                      ),
+                    )),
               ],
             ),
           ),
