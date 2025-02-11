@@ -2,8 +2,6 @@ import 'package:buddy_pair/Common/color_constants.dart';
 import 'package:flutter/material.dart';
 import 'Common/appbarfonts_constants.dart';
 
-
-
 class PrivacySettingsScreen extends StatefulWidget {
   const PrivacySettingsScreen({super.key});
 
@@ -30,7 +28,6 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
                   decoration: BoxDecoration(
                     color: ColorConstants.pinkColor,
                     shape: BoxShape.circle,
-
                   ),
                   child: Image.asset(
                     'assets/images/Search.png',
@@ -136,7 +133,7 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
         activeColor: ColorConstants.whiteColor,
         inactiveThumbColor: ColorConstants.whiteColor,
         inactiveTrackColor: ColorConstants.primaryColor,
-        activeTrackColor: ColorConstants.primaryColor,
+        activeTrackColor: ColorConstants.greenColor,
       ),
     );
   }
