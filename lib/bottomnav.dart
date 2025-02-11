@@ -77,7 +77,7 @@ class _BottomNavState extends State<BottomNav> {
         ),
         child: Icon(
           icon,
-          size: isCenter ? 39 : 26,
+          size: isCenter ? 40 : 26,
           color: _selectedIndex == index ? Colors.white : Colors.white,
         ),
       ),
