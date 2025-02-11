@@ -93,6 +93,7 @@ class _PrivacySettingsScreenState extends State<PrivacySettingsScreen> {
     );
   }
 
+
   Widget _buildInfoTile(String title, String value) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
